@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 31-34</title>
+</head>
+
+<body>
+
+    <script>
+        //question # 1
+        function time() {
+            var now = new Date();
+            document.write(now);
+        }
+        time();
+        //question # 2
+        function alertCurrentMonth() {
+            const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            var now = new Date();
+            var monthIndex = now.getMonth();
+            var currentMonth = months[monthIndex];
+            alert(`Current month is: ${currentMonth}`);
+        }
+        alertCurrentMonth();
+        // question # 3
+        function dayAbbreviation() {
+            var days = ['Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat', 'Sun']
+            var now = new Date();
+            var currentDay = now.getDay();
+            var dayAbbreviation = days[currentDay]
+            alert(`Today is : ${dayAbbreviation}`);
+
+        }
+        dayAbbreviation();
+        //question # 4
+        function funDay() {
+            var check = new Date();
+            var dayIndex = check.getDay();
+            if (dayIndex === 0 || dayIndex === 6) {
+                alert("It's Funday")
+            }
+        }
+        funDay();
+        //question # 5
+        function displayMessage() {
+            var now = new Date();
+            var dayOfMonth = now.getDate()
+            if (dayOfMonth < 16) {
+                alert("First fifteen days of the month");
+            } else {
+                alert("Last days of the month");
+            }
+        }
+        displayMessage();
+
+        //question # 6
+        var minutesSince1970 = Math.floor(new Date().getTime() / (1000 * 60));
+        alert("Minutes since Jan 1, 1970: " + minutesSince1970);
+
+
+        //question # 7
+        var hours = new Date().getHours();
+        if (hours < 12) {
+            alert("It's AM");
+        } else {
+            alert("It's PM");
+        }
+
+        //question # 8
+        var laterDate = new Date(2020, 11, 31);
+        alert(laterDate);
+
+
+        //question # 9
+        var ramadanStart = new Date("June 18, 2015");
+        var today = new Date();
+        var diffInTime = today.getTime() - ramadanStart.getTime();
+        var diffInDays = Math.floor(diffInTime / (1000 * 3600 * 24));
+        alert(diffInDays + " days have passed since 1st Ramadan");
+
+        //question # 10
+        var referenceDate = new Date();
+        var startOf2015 = new Date("January 1, 2015");
+        var secondsElapsed = Math.floor((referenceDate.getTime() - startOf2015.getTime()) / 1000);
+        document.write(secondsElapsed + " seconds have elapsed since the start of 2015.");
+
+        //question # 11
+        var currentDate = new Date();
+        currentDate.setHours(currentDate.getHours() + 1);
+        alert(currentDate);
+
+        //question # 12
+        var date = new Date();
+        date.setFullYear(date.getFullYear() - 100);
+        alert(date);
+        //question # 13
+        var age = prompt("Enter your age:");
+        var birthYear = new Date().getFullYear() - age;
+        document.write("Your birth year is " + birthYear);
+
+        //question # 14
+        var customerName = "ABC";
+        var currentMonth = "August";
+        var numberOfUnits = 410;
+        var chargesPerUnit = 16;
+        var netAmount = (numberOfUnits * chargesPerUnit).toFixed(2);
+        var latePaymentSurcharge = 350;
+        var grossAmount = (parseFloat(netAmount) + latePaymentSurcharge).toFixed(2);
+
+        document.write(`
+    <h1>K-Electric Bill</h1>
+    <p>Customer Name: <strong>${customerName}</strong></p>
+    <p>Current Month: <strong>${currentMonth}</strong></p>
+    <p>Number of Units: <strong>${numberOfUnits}</strong></p>
+    <p>Charges per Unit: <strong>${chargesPerUnit}</strong></p>
+    <p>Net Amount Payable (within Due Date): <strong>${netAmount}</strong></p>
+    <p>Late Payment Surcharge: <strong>${latePaymentSurcharge}</strong></p>
+    <p>Gross Amount Payable (after Due Date): <strong>${grossAmount}</strong></p>
+`);
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html

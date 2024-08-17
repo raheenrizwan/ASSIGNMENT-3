@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//question # 1
+function showDateTime() {
+    var  currentDate = new Date();
+    document.write(currentDate);
+}
+showDateTime();
+
+//question # 2
+function greetUser(firstName, lastName) {
+    var fullName = firstName + " " + lastName;
+    alert("Hello, " + fullName + "!");
+}
+greetUser("Raheen", "Rizwan");
+
+//qusetion # 3
+function addNumbers(num1, num2) {
+    return num1 + num2;
+}
+var sum = addNumbers(5, 7);
+alert("The sum is: " + sum);
+
+//qusetion # 4
+function calculator(num1, num2, operator) {
+    var  result;
+    if (operator === "+") {
+        result = num1 + num2;
+    } else if (operator === "-") {
+        result = num1 - num2;
+    } else if (operator === "*") {
+        result = num1 * num2;
+    } else if (operator === "/") {
+        result = num1 / num2;
+    } else {
+        result = "Invalid operator";
+    }
+    return result;
+}
+var  calcResult = calculator(5, 3, "+");
+alert("The result is: " + calcResult);
+
+//qusetion # 5
+function squareNumber(num) {
+    return num * num;
+}
+var  square = squareNumber(4);
+alert("The square is: " + square);
+
+//qusetion  # 6
+function factorial(num) {
+    if (num === 0 || num === 1) {
+        return 1;
+    } else {
+        return num * factorial(num - 1);
+    }
+}
+var  fact = factorial(5);
+alert("The factorial is: " + fact);
+
+//qusetion # 7
+function displayCounting(start, end) {
+    for (let i = start; i <= end; i++) {
+        document.write(i + "<br>");
+    }
+}
+displayCounting(1, 10);
+
+//qusetion # 8
+function calculateHypotenuse(base, perpendicular) {
+    function calculateSquare(num) {
+        return num * num;
+    }
+    var  hypotenuse = Math.sqrt(calculateSquare(base) + calculateSquare(perpendicular));
+    return hypotenuse;
+}
+var  hypotenuseValue = calculateHypotenuse(3, 4);
+alert("The hypotenuse is: " + hypotenuseValue);
+
+//qusetion # 9
+function calculateArea(width, height) {
+    return width * height;
+}
+// Arguments as values
+var  area1 = calculateArea(5, 10);
+alert("Area (values): " + area1);
+
+// Arguments as variables
+var  width = 6;
+var  height = 7;
+var  area2 = calculateArea(width, height);
+alert("Area (variables): " + area2);
+
+//qusetion # 10
+function isPalindrome(str) {
+    var  reversedStr = str.split('').reverse().join('');
+    return str === reversedStr;
+}
+var palindromeCheck = isPalindrome("madam");
+alert("Is palindrome: " + palindromeCheck);
+
+//qusetion # 11
+function capitalizeWords(str) {
+    var  words = str.split(' ');
+    for (let i = 0; i < words.length; i++) {
+        words[i] = words[i][0].toUpperCase() + words[i].slice(1);
+    }
+    return words.join(' ');
+}
+var  capitalizedString = capitalizeWords("the quick brown fox");
+alert("Capitalized String: " + capitalizedString);
+
+//question # 12
+function findLongestWord(str) {
+    var words = str.split(' ');
+    var longestWord = words[0];
+    for (let i = 1; i < words.length; i++) {
+        if (words[i].length > longestWord.length) {
+            longestWord = words[i];
+        }
+    }
+    return longestWord;
+}
+var  longestWord = findLongestWord("Web Development Tutorial");
+alert("Longest Word: " + longestWord);
+
+//question # 13
+function countLetterOccurrences(str, letter) {
+    var  count = 0;
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === letter) {
+            count++;
+        }
+    }
+    return count;
+}
+var  letterCount = countLetterOccurrences("JSResourceS.com", "o");
+alert("Occurrences of 'o': " + letterCount);
+
+//qusetion # 14
+function calcCircumference(radius) {
+    var  circumference = 2 * Math.PI * radius;
+    alert("The circumference is " + circumference.toFixed(2));
+}
+
+function calcArea(radius) {
+    var  area = Math.PI * Math.pow(radius, 2);
+    alert("The area is " + area.toFixed(2));
+}
+
+var  radius = 5;
+calcCircumference(radius);
+calcArea(radius);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
